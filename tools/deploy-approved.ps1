@@ -59,8 +59,12 @@ if ($LASTEXITCODE -ne 0) {
     throw 'GitHub CLI authentication is not valid. Re-authenticate before publishing.'
 }
 
+$savedErrorPreference = $ErrorActionPreference
+$ErrorActionPreference = 'Continue'
 $beforeRemote = @(& git ls-remote $repository refs/heads/main 2>$null)
-if ($LASTEXITCODE -ne 0 -or $beforeRemote.Count -eq 0) {
+$gitRemoteExitCode = $LASTEXITCODE
+$ErrorActionPreference = $savedErrorPreference
+if ($gitRemoteExitCode -ne 0 -or $beforeRemote.Count -eq 0) {
     Write-Warning 'Normal Git transport is unavailable; using the GitHub API fallback for changed generated files.'
     & powershell.exe -NoProfile -ExecutionPolicy Bypass -File $apiPublishScript -PublicRoot $publicRoot -GhPath $ghPath
     if ($LASTEXITCODE -ne 0) {
