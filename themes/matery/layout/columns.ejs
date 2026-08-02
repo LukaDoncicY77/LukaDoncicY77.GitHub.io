@@ -1,0 +1,30 @@
+<%- partial('_partial/bg-cover') %>
+
+<main class="content">
+    <div class="container">
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title center-align">六个栏目</span>
+                <p class="center-align grey-text text-darken-1">
+                    文章以一个主栏目归档，再用人物、城市、年份和活动标签交叉连接。
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <% (theme.columns || []).forEach(function(column) { %>
+            <div class="col s12 m6 l4" data-aos="fade-up">
+                <a href="<%- url_for(column.url) %>" aria-label="进入<%- column.name %>栏目">
+                    <div class="card hoverable" style="min-height: 205px;">
+                        <div class="card-content center-align">
+                            <i class="<%- column.icon %> fa-3x" style="color: #42b983;"></i>
+                            <h5 style="color: #333;"><%- column.name %></h5>
+                            <p class="grey-text text-darken-1"><%- column.description %></p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+</main>
