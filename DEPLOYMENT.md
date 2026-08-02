@@ -60,9 +60,34 @@ G:\Y77\.tools\gh-2.97.0\bin\gh.exe
 & 'G:\Y77\.tools\gh-2.97.0\bin\gh.exe' auth setup-git
 ```
 
+## Git 网络与代理
+
+当前 Windows 浏览器代理和 Git 统一使用：
+
+```text
+http://127.0.0.1:7897
+```
+
+当前全局 Git 配置应满足：
+
+```powershell
+git config --global --get http.proxy
+git config --global --get-all http.sslVerify
+```
+
+第一条应输出 `http://127.0.0.1:7897`；第二条应无输出，表示使用默认且安全的 TLS 证书校验。不要重新设置 `http.sslVerify=false`。
+
+普通 Git 连接测试：
+
+```powershell
+git ls-remote https://github.com/LukaDoncicY77/LukaDoncicY77.GitHub.io.git refs/heads/main
+```
+
+如果浏览器能打开 GitHub、GitHub API 也正常，但该命令提示无法连接 `github.com:443`，优先检查代理软件是否正在运行、监听端口是否仍为 7897，以及 `git config --global --get http.proxy` 是否与之一致。不要把关闭证书校验当作网络修复手段。
+
 ## 故障边界
 
 - 不使用社交平台原始归档作为 Hexo `source` 目录。
 - 不在未提交的 Git 工作区上发布。
-- 不用源文件覆盖公开仓库 `main`；只让 Hexo 部署器推送生成结果。
+- 不用源文件覆盖公开仓库 `main`；受控脚本只通过 GitHub API 非强制更新 Hexo 生成结果。
 - 当 npm 缓存权限异常时，直接使用上述 PowerShell 脚本；脚本调用项目内的 `node_modules\.bin\hexo.cmd`，不依赖 npm 缓存写入。
