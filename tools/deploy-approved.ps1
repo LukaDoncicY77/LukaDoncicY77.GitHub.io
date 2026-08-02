@@ -13,7 +13,9 @@ if (-not $Approve) {
 $blogRoot = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '..')).Path
 $workspaceRoot = Split-Path -Parent $blogRoot
 $prepareScript = Join-Path $PSScriptRoot 'prepare-deploy.ps1'
+$apiPublishScript = Join-Path $PSScriptRoot 'publish-via-github-api.ps1'
 $hexoCmd = Join-Path $blogRoot 'node_modules\.bin\hexo.cmd'
+$publicRoot = Join-Path $blogRoot 'public'
 $repository = 'https://github.com/LukaDoncicY77/LukaDoncicY77.GitHub.io.git'
 $portableGh = Join-Path $workspaceRoot '.tools\gh-2.97.0\bin\gh.exe'
 
@@ -57,9 +59,15 @@ if ($LASTEXITCODE -ne 0) {
     throw 'GitHub CLI authentication is not valid. Re-authenticate before publishing.'
 }
 
-$beforeRemote = @(& git ls-remote $repository refs/heads/main)
+$beforeRemote = @(& git ls-remote $repository refs/heads/main 2>$null)
 if ($LASTEXITCODE -ne 0 -or $beforeRemote.Count -eq 0) {
-    throw 'The GitHub Pages main branch could not be reached.'
+    Write-Warning 'Normal Git transport is unavailable; using the GitHub API fallback for changed generated files.'
+    & powershell.exe -NoProfile -ExecutionPolicy Bypass -File $apiPublishScript -PublicRoot $publicRoot -GhPath $ghPath
+    if ($LASTEXITCODE -ne 0) {
+        throw "GitHub API fallback deployment failed with exit code $LASTEXITCODE."
+    }
+    Write-Host 'Verify the Pages build at https://lukadoncicy77.github.io/'
+    return
 }
 $beforeHash = ($beforeRemote[0] -split '\s+')[0]
 
