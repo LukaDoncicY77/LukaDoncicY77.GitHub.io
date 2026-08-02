@@ -14,9 +14,7 @@ $blogRoot = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '..')).Path
 $workspaceRoot = Split-Path -Parent $blogRoot
 $prepareScript = Join-Path $PSScriptRoot 'prepare-deploy.ps1'
 $apiPublishScript = Join-Path $PSScriptRoot 'publish-via-github-api.ps1'
-$hexoCmd = Join-Path $blogRoot 'node_modules\.bin\hexo.cmd'
 $publicRoot = Join-Path $blogRoot 'public'
-$repository = 'https://github.com/LukaDoncicY77/LukaDoncicY77.GitHub.io.git'
 $portableGh = Join-Path $workspaceRoot '.tools\gh-2.97.0\bin\gh.exe'
 
 Push-Location $blogRoot
@@ -59,41 +57,8 @@ if ($LASTEXITCODE -ne 0) {
     throw 'GitHub CLI authentication is not valid. Re-authenticate before publishing.'
 }
 
-$savedErrorPreference = $ErrorActionPreference
-$ErrorActionPreference = 'Continue'
-$beforeRemote = @(& git ls-remote $repository refs/heads/main 2>$null)
-$gitRemoteExitCode = $LASTEXITCODE
-$ErrorActionPreference = $savedErrorPreference
-if ($gitRemoteExitCode -ne 0 -or $beforeRemote.Count -eq 0) {
-    Write-Warning 'Normal Git transport is unavailable; using the GitHub API fallback for changed generated files.'
-    & powershell.exe -NoProfile -ExecutionPolicy Bypass -File $apiPublishScript -PublicRoot $publicRoot -GhPath $ghPath
-    if ($LASTEXITCODE -ne 0) {
-        throw "GitHub API fallback deployment failed with exit code $LASTEXITCODE."
-    }
-    Write-Host 'Verify the Pages build at https://lukadoncicy77.github.io/'
-    return
+& powershell.exe -NoProfile -ExecutionPolicy Bypass -File $apiPublishScript -PublicRoot $publicRoot -GhPath $ghPath
+if ($LASTEXITCODE -ne 0) {
+    throw "GitHub API deployment failed with exit code $LASTEXITCODE."
 }
-$beforeHash = ($beforeRemote[0] -split '\s+')[0]
-
-Push-Location $blogRoot
-try {
-    & $hexoCmd deploy
-    if ($LASTEXITCODE -ne 0) {
-        throw "Hexo deploy failed with exit code $LASTEXITCODE."
-    }
-}
-finally {
-    Pop-Location
-}
-
-$afterRemote = @(& git ls-remote $repository refs/heads/main)
-if ($LASTEXITCODE -ne 0 -or $afterRemote.Count -eq 0) {
-    throw 'Deploy completed locally, but the remote main branch could not be verified.'
-}
-$afterHash = ($afterRemote[0] -split '\s+')[0]
-
-Write-Host ''
-Write-Host 'Approved deployment completed.' -ForegroundColor Green
-Write-Host "Remote main before: $beforeHash"
-Write-Host "Remote main after:  $afterHash"
 Write-Host 'Verify the Pages build at https://lukadoncicy77.github.io/'
