@@ -174,10 +174,18 @@ QQ 空间里的相册也是如此。四千多张照片和视频看起来像一�
 
 <!-- V01：后撤步挑战 -->
 
-<video controls playsinline preload="metadata" style="display:block;width:100%;max-width:560px;margin:1.5rem auto .6rem;border-radius:10px;">
-  <source src="{% asset_path V01.mp4 %}" type="video/mp4">
-  当前浏览器不支持视频播放。
-</video>
+<div class="deferred-video deferred-video--narrow deferred-video--portrait" data-deferred-video>
+  <video controls playsinline preload="none" poster="{% asset_path V01-poster.jpg %}" aria-label="后撤步挑战视频">
+    <source data-src="{% asset_path V01.mp4 %}" type="video/mp4">
+    当前浏览器不支持视频播放。
+  </video>
+  <button class="deferred-video-load" type="button" data-video-load aria-label="加载并播放后撤步挑战视频">
+    <span class="deferred-video-load-content">
+      <span class="deferred-video-play-icon" aria-hidden="true">▶</span>
+      <span><strong data-video-label>点击播放视频</strong><small>点按后才加载 · 画质不变</small></span>
+    </span>
+  </button>
+</div>
 
 <p style="text-align:center;color:#777;font-size:.9rem;">在大学篮球场尝试复刻卢卡 2024 年西部决赛绝杀森林狼的后撤步三分</p>
 
@@ -301,10 +309,18 @@ QQ 空间里的相册也是如此。四千多张照片和视频看起来像一�
   </div>
 </div>
 
-<video controls playsinline preload="metadata" style="display:block;width:100%;max-width:760px;margin:1.5rem auto .6rem;border-radius:10px;">
-  <source src="{% asset_path V02.mp4 %}" type="video/mp4">
-  当前浏览器不支持视频播放。
-</video>
+<div class="deferred-video" data-deferred-video>
+  <video controls playsinline preload="none" poster="{% asset_path V02-poster.jpg %}" aria-label="经特殊通道进入场地区域的视频">
+    <source data-src="{% asset_path V02.mp4 %}" type="video/mp4">
+    当前浏览器不支持视频播放。
+  </video>
+  <button class="deferred-video-load" type="button" data-video-load aria-label="加载并播放入场视频">
+    <span class="deferred-video-load-content">
+      <span class="deferred-video-play-icon" aria-hidden="true">▶</span>
+      <span><strong data-video-label>点击播放视频</strong><small>点按后才加载 · 画质不变</small></span>
+    </span>
+  </button>
+</div>
 
 <p style="text-align:center;color:#777;font-size:.9rem;">从集合处经特殊通道进入场地区域，此时尚未检票进入最终互动篮球场。</p>
 
@@ -402,10 +418,18 @@ QQ 空间里的相册也是如此。四千多张照片和视频看起来像一�
 
 我也要感谢“守护胖7健康成长”的两位管理员——剪子姐和双鱼哥。是你们组织了这些活动，也把机会交到了我和朋友手里。因为你们，我们才能分别走进上海和北京的现场，亲眼见到一直喜欢的卢卡。谢谢你们，让这一切真正发生。
 
-<video controls playsinline preload="metadata" style="display:block;width:100%;max-width:760px;margin:1.5rem auto .6rem;border-radius:10px;">
-  <source src="{% asset_path V03.mp4 %}" type="video/mp4">
-  当前浏览器不支持视频播放。
-</video>
+<div class="deferred-video" data-deferred-video>
+  <video controls playsinline preload="none" poster="{% asset_path M09-1.jpg %}" aria-label="卢卡看见海报并指向本人所在位置的视频">
+    <source data-src="{% asset_path V03.mp4 %}" type="video/mp4">
+    当前浏览器不支持视频播放。
+  </video>
+  <button class="deferred-video-load" type="button" data-video-load aria-label="加载并播放第一次互动完整视频">
+    <span class="deferred-video-load-content">
+      <span class="deferred-video-play-icon" aria-hidden="true">▶</span>
+      <span><strong data-video-label>点击播放视频</strong><small>点按后才加载 · 画质不变</small></span>
+    </span>
+  </button>
+</div>
 
 <p style="text-align:center;color:#777;font-size:.9rem;">第一次互动的完整视频：卢卡看见海报、指向本人所在位置，并示意身旁人员看过来。</p>
 
@@ -453,10 +477,18 @@ QQ 空间里的相册也是如此。四千多张照片和视频看起来像一�
 
 六年前，我只能在比赛画面里追随他的目光，看他把一次次不可思议的进球送进篮筐。六年后，我仍然站在人群里看着他，只是这一次，他的目光从球场另一边回来，落在了我这里。
 
-<video controls playsinline preload="metadata" style="display:block;width:100%;max-width:760px;margin:1.5rem auto .6rem;border-radius:10px;">
-  <source src="{% asset_path V04.mp4 %}" type="video/mp4">
-  当前浏览器不支持视频播放。
-</video>
+<div class="deferred-video" data-deferred-video>
+  <video controls playsinline preload="none" poster="{% asset_path V04-poster.jpg %}" aria-label="卢卡看向本人所在位置并竖起大拇指的视频">
+    <source data-src="{% asset_path V04.mp4 %}" type="video/mp4">
+    当前浏览器不支持视频播放。
+  </video>
+  <button class="deferred-video-load" type="button" data-video-load aria-label="加载并播放大拇指互动视频">
+    <span class="deferred-video-load-content">
+      <span class="deferred-video-play-icon" aria-hidden="true">▶</span>
+      <span><strong data-video-label>点击播放视频</strong><small>点按后才加载 · 画质不变</small></span>
+    </span>
+  </button>
+</div>
 
 <p style="text-align:center;color:#777;font-size:.9rem;">卢卡先看向我的位置，微笑着竖起大拇指，随后又看向同一区域的其他球迷。</p>
 
@@ -493,6 +525,116 @@ QQ 空间里的相册也是如此。四千多张照片和视频看起来像一�
 活动进行到更晚一些，现场响起了 “MVP” 的呼喊，卢卡听见后笑着鼓掌回应。这发生在海报和大拇指之后，也是他面向全场球迷的一次集体回应。
 
 <style>
+  .deferred-video {
+    position: relative;
+    width: 100%;
+    max-width: 760px;
+    margin: 1.5rem auto .6rem;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #000;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .14);
+    aspect-ratio: 16 / 9;
+  }
+
+  .deferred-video--narrow {
+    max-width: 560px;
+  }
+
+  .deferred-video--portrait {
+    aspect-ratio: 3 / 4;
+  }
+
+  .deferred-video video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: inherit;
+    background: #000;
+    object-fit: contain;
+  }
+
+  .deferred-video-load {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    border: 0;
+    border-radius: inherit;
+    color: #fff;
+    background: rgba(0, 0, 0, .18);
+    cursor: pointer;
+    transition: background .2s ease;
+  }
+
+  .deferred-video-load:hover,
+  .deferred-video-load:focus-visible {
+    background: rgba(0, 0, 0, .3);
+    outline: none;
+  }
+
+  .deferred-video-load-content {
+    display: inline-flex;
+    align-items: center;
+    gap: .75rem;
+    padding: .7rem 1rem;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, .7);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .28);
+    backdrop-filter: blur(3px);
+  }
+
+  .deferred-video-load-content > span:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.25;
+  }
+
+  .deferred-video-load-content strong {
+    font-size: .96rem;
+    font-weight: 600;
+  }
+
+  .deferred-video-load-content small {
+    margin-top: .15rem;
+    color: rgba(255, 255, 255, .78);
+    font-size: .72rem;
+    font-weight: 400;
+  }
+
+  .deferred-video-play-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding-left: .12rem;
+    border-radius: 50%;
+    color: #fff;
+    background: #26a69a;
+    box-shadow: 0 3px 10px rgba(38, 166, 154, .45);
+    font-size: .95rem;
+  }
+
+  .deferred-video[data-video-state="loading"] .deferred-video-play-icon {
+    animation: deferred-video-pulse 1s ease-in-out infinite alternate;
+  }
+
+  .deferred-video[data-video-state="loaded"] .deferred-video-load {
+    display: none;
+  }
+
+  @keyframes deferred-video-pulse {
+    from { opacity: .55; transform: scale(.94); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
   .media-carousel {
     max-width: 680px;
     margin: 1.6rem auto 2rem;
@@ -630,6 +772,20 @@ QQ 空间里的相册也是如此。四千多张照片和视频看起来像一�
   }
 
   @media (max-width: 600px) {
+    .deferred-video {
+      border-radius: 10px;
+    }
+
+    .deferred-video-load-content {
+      gap: .6rem;
+      padding: .6rem .8rem;
+    }
+
+    .deferred-video-play-icon {
+      width: 2rem;
+      height: 2rem;
+    }
+
     .media-carousel-frame {
       height: min(66vh, 560px);
       min-height: 390px;
@@ -652,6 +808,51 @@ QQ 空间里的相册也是如此。四千多张照片和视频看起来像一�
 
 <script>
   (() => {
+    const initDeferredVideos = () => {
+      document.querySelectorAll('[data-deferred-video]').forEach((wrapper) => {
+        if (wrapper.dataset.videoReady === 'true') return;
+
+        const video = wrapper.querySelector('video');
+        const source = wrapper.querySelector('source[data-src]');
+        const button = wrapper.querySelector('[data-video-load]');
+        const label = wrapper.querySelector('[data-video-label]');
+        if (!video || !source || !button || !label) return;
+
+        wrapper.dataset.videoReady = 'true';
+
+        const markLoaded = () => {
+          wrapper.dataset.videoState = 'loaded';
+          label.textContent = '点击播放视频';
+        };
+
+        const markError = () => {
+          wrapper.dataset.videoState = 'error';
+          label.textContent = '加载失败，点击重试';
+          button.disabled = false;
+        };
+
+        video.addEventListener('loadeddata', markLoaded);
+        video.addEventListener('playing', markLoaded);
+        video.addEventListener('error', markError);
+
+        button.addEventListener('click', () => {
+          if (!source.src) source.src = source.dataset.src;
+
+          wrapper.dataset.videoState = 'loading';
+          label.textContent = '正在加载…';
+          button.disabled = true;
+          video.load();
+
+          const playback = video.play();
+          if (playback && typeof playback.catch === 'function') {
+            playback.catch(() => {
+              if (video.readyState >= 2) markLoaded();
+            });
+          }
+        });
+      });
+    };
+
     const initMediaCarousels = () => {
       document.querySelectorAll('[data-media-carousel]').forEach((carousel) => {
         if (carousel.dataset.ready === 'true') return;
@@ -703,10 +904,15 @@ QQ 空间里的相册也是如此。四千多张照片和视频看起来像一�
       });
     };
 
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initMediaCarousels, { once: true });
-    } else {
+    const initArticleMedia = () => {
+      initDeferredVideos();
       initMediaCarousels();
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initArticleMedia, { once: true });
+    } else {
+      initArticleMedia();
     }
   })();
 </script>
