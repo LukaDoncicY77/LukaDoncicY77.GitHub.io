@@ -1,5 +1,6 @@
 ---
 title: Hello World
+hide_from_home: true
 ---
 
 {% aplayer "天外来物" "薛之谦" "TW.mp3" "1.jpg" "autoplay" "lrc:TW.txt" %}

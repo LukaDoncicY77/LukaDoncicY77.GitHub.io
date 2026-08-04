@@ -1,6 +1,7 @@
 ---
 title: '宇宙终结篇 — 直到时间失去意义'
 date: 2022-12-03 12:26:13
+img: /2022/12/03/universe/2.jpg
 tags: universe
 categories:  宇宙
 ---

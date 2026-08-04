@@ -1,6 +1,7 @@
 ---
 title: 决策之王 — 卢卡东契奇 
 date: 2022-10-23 20:25:22
+img: /2022/10/23/luka/1.png
 tags: Mavericks
 categories: 篮球
 --- 
