@@ -8,7 +8,7 @@ tags:
   - NBA
   - 球迷故事
 summary: 从2018年选秀大会初识卢卡，到2024年在上海举起亲手制作的海报——那一天，我看见了他，他也看见了我。
-img: /2024/08/29/i-saw-you-you-saw-me/M11.jpg
+img: /2024/08/29/i-saw-you-you-saw-me/M11-web.webp
 toc: true
 reprintPolicy: noreprint
 ---
@@ -43,7 +43,7 @@ reprintPolicy: noreprint
 
 六年以后，轮到他在人群中注意到我。
 
-<img src="{% asset_path M01.jpg %}" width="480" alt="卢卡站到场地中央时，我在他身后举起亲手制作的海报">
+<img src="{% asset_path M01-web.webp %}" width="480" alt="卢卡站到场地中央时，我在他身后举起亲手制作的海报" loading="eager" decoding="async" fetchpriority="high">
 
 *卢卡站在场地中央时，我在最后一排举起了为他制作的海报。*
 
@@ -69,7 +69,7 @@ reprintPolicy: noreprint
 
 当时的我当然不会想到，这个从选秀大会开始认识的年轻人，会陪我走过完整的高中和大学阶段。更不会想到，六年以后，我会带着这些年积累下来的喜欢，真的站到他面前。
 
-<img src="{% asset_path M02.jpg %}" width="760" alt="衣柜里收藏的卢卡球衣和相关服饰" loading="lazy">
+<img src="{% asset_path M02-web.webp %}" width="760" alt="衣柜里收藏的卢卡球衣和相关服饰" loading="lazy" decoding="async">
 
 *这些年陆续买下的卢卡球衣和相关服饰，已经占据了衣柜的一角。*
 
@@ -104,16 +104,16 @@ QQ 空间里的相册也是如此。四千多张照片和视频看起来像一�
 <div id="m03-carousel" class="media-carousel" data-media-carousel role="region" aria-roledescription="carousel" aria-label="卢卡相关收藏照片，共四张" tabindex="0">
   <div class="media-carousel-frame">
     <figure id="m03-slide-1" class="media-carousel-slide" data-media-slide role="group" aria-roledescription="slide" aria-label="第 1 张，共 4 张" aria-hidden="false">
-      <img src="{% asset_path M03-0.jpg %}" alt="桌面上陈列的卢卡海报、书籍与球星卡收藏" loading="lazy">
+      <img src="{% asset_path M03-0-web.webp %}" alt="桌面上陈列的卢卡海报、书籍与球星卡收藏" loading="eager" decoding="async">
     </figure>
     <figure id="m03-slide-2" class="media-carousel-slide" data-media-slide role="group" aria-roledescription="slide" aria-label="第 2 张，共 4 张" aria-hidden="true" hidden>
-      <img src="{% asset_path M03-1.jpg %}" alt="衣柜里的卢卡 77 号球衣与短袖" loading="lazy">
+      <img data-src="{% asset_path M03-1-web.webp %}" alt="衣柜里的卢卡 77 号球衣与短袖" loading="lazy" decoding="async">
     </figure>
     <figure id="m03-slide-3" class="media-carousel-slide" data-media-slide role="group" aria-roledescription="slide" aria-label="第 3 张，共 4 张" aria-hidden="true" hidden>
-      <img src="{% asset_path M03-2.jpg %}" alt="东契奇绝杀快船的球鞋与球星卡" loading="lazy">
+      <img data-src="{% asset_path M03-2-web.webp %}" alt="东契奇绝杀快船的球鞋与球星卡" loading="lazy" decoding="async">
     </figure>
     <figure id="m03-slide-4" class="media-carousel-slide" data-media-slide role="group" aria-roledescription="slide" aria-label="第 4 张，共 4 张" aria-hidden="true" hidden>
-      <img src="{% asset_path M03-3.jpg %}" alt="高中时期收藏的东契奇杂志、书籍与手环" loading="lazy">
+      <img data-src="{% asset_path M03-3-web.webp %}" alt="高中时期收藏的东契奇杂志、书籍与手环" loading="lazy" decoding="async">
     </figure>
   </div>
 
@@ -131,7 +131,7 @@ QQ 空间里的相册也是如此。四千多张照片和视频看起来像一�
   </div>
 </div>
 
-<img src="{% asset_path M04.jpg %}" width="500" alt="QQ 空间 dallas mavericks 相册截图" loading="lazy">
+<img src="{% asset_path M04-web.webp %}" width="500" alt="QQ 空间 dallas mavericks 相册截图" loading="lazy" decoding="async">
 
 
 ## 我开始找你了
@@ -170,7 +170,7 @@ QQ 空间里的相册也是如此。四千多张照片和视频看起来像一�
 
 <!-- M05：微博征集活动 -->
 
-<img src="{% asset_path M05.png %}" width="560" alt="2024 年 8 月 22 日发布的 Jordan Family 中国行名额征集微博" loading="lazy">
+<img src="{% asset_path M05-web.webp %}" width="560" alt="2024 年 8 月 22 日发布的 Jordan Family 中国行名额征集微博" loading="lazy" decoding="async">
 
 <!-- V01：后撤步挑战 -->
 
@@ -221,7 +221,7 @@ QQ 空间里的相册也是如此。四千多张照片和视频看起来像一�
 
 海报究竟能不能越过人群抵达他那里，谁也不能保证。
 
-<img src="{% asset_path M06.jpg %}" width="560" alt="本人手持亲自设计的欢迎卢卡来中国海报" loading="lazy">
+<img src="{% asset_path M06-web.webp %}" width="560" alt="本人手持亲自设计的欢迎卢卡来中国海报" loading="lazy" decoding="async">
 
 ## 两个多小时，和过去的六年
 
@@ -258,13 +258,13 @@ QQ 空间里的相册也是如此。四千多张照片和视频看起来像一�
 <div id="m07-carousel" class="media-carousel" data-media-carousel role="region" aria-roledescription="carousel" aria-label="入场与活动场地照片，共三张" tabindex="0">
   <div class="media-carousel-frame">
     <figure id="m07-slide-1" class="media-carousel-slide" data-media-slide role="group" aria-roledescription="slide" aria-label="第 1 张，共 3 张" aria-hidden="false">
-      <img src="{% asset_path M07-1.jpg %}" width="620" alt="现场球迷朋友叠放入场券留念" loading="lazy">
+      <img src="{% asset_path M07-1-web.webp %}" width="620" alt="现场球迷朋友叠放入场券留念" loading="eager" decoding="async">
     </figure>
     <figure id="m07-slide-2" class="media-carousel-slide" data-media-slide role="group" aria-roledescription="slide" aria-label="第 2 张，共 3 张" aria-hidden="true" hidden>
-      <img src="{% asset_path M07-2.jpg %}" width="760" alt="上海耐克篮球公园及 Jordan Family 中国行场地全景" loading="lazy">
+      <img data-src="{% asset_path M07-2-web.webp %}" width="760" alt="上海耐克篮球公园及 Jordan Family 中国行场地全景" loading="lazy" decoding="async">
     </figure>
     <figure id="m07-slide-3" class="media-carousel-slide" data-media-slide role="group" aria-roledescription="slide" aria-label="第 3 张，共 3 张" aria-hidden="true" hidden>
-      <img src="{% asset_path M07-3.jpg %}" width="600" alt="现场 Jordan Family 指示牌" loading="lazy">
+      <img data-src="{% asset_path M07-3-web.webp %}" width="600" alt="现场 Jordan Family 指示牌" loading="lazy" decoding="async">
     </figure>
   </div>
 
@@ -286,13 +286,13 @@ QQ 空间里的相册也是如此。四千多张照片和视频看起来像一�
 <div id="m07b-carousel" class="media-carousel" data-media-carousel role="region" aria-roledescription="carousel" aria-label="卢卡主题展板与送礼物现场照片，共三张" tabindex="0">
   <div class="media-carousel-frame">
     <figure id="m07b-slide-1" class="media-carousel-slide" data-media-slide role="group" aria-roledescription="slide" aria-label="第 1 张，共 3 张" aria-hidden="false">
-      <img src="{% asset_path M07B-2.jpg %}" width="760" alt="卢卡主题展板全景" loading="lazy">
+      <img src="{% asset_path M07B-2-web.webp %}" width="760" alt="卢卡主题展板全景" loading="eager" decoding="async">
     </figure>
     <figure id="m07b-slide-2" class="media-carousel-slide" data-media-slide role="group" aria-roledescription="slide" aria-label="第 2 张，共 3 张" aria-hidden="true" hidden>
-      <img src="{% asset_path M07B-1.jpg %}" width="700" alt="送礼物环节的近距离现场" loading="lazy">
+      <img data-src="{% asset_path M07B-1-web.webp %}" width="700" alt="送礼物环节的近距离现场" loading="lazy" decoding="async">
     </figure>
     <figure id="m07b-slide-3" class="media-carousel-slide" data-media-slide role="group" aria-roledescription="slide" aria-label="第 3 张，共 3 张" aria-hidden="true" hidden>
-      <img src="{% asset_path M07B-3.jpg %}" width="520" alt="卢卡在展板区域的现场画面" loading="lazy">
+      <img data-src="{% asset_path M07B-3-web.webp %}" width="520" alt="卢卡在展板区域的现场画面" loading="lazy" decoding="async">
     </figure>
   </div>
 
@@ -334,7 +334,7 @@ QQ 空间里的相册也是如此。四千多张照片和视频看起来像一�
 
 > “Hello, everybody. Very excited to be here. It should be fun. Thank you, fans.”
 
-<img src="{% asset_path M08.jpeg %}" width="760" alt="卢卡来到球场中央向球迷打招呼的现场全景" loading="lazy">
+<img src="{% asset_path M08-web.webp %}" width="760" alt="卢卡来到球场中央向球迷打招呼的现场全景" loading="lazy" decoding="async">
 
 *卢卡来到球场中央，向现场球迷挥手并打招呼。*
 
@@ -419,7 +419,7 @@ QQ 空间里的相册也是如此。四千多张照片和视频看起来像一�
 我也要感谢“守护胖7健康成长”的两位管理员——剪子姐和双鱼哥。是你们组织了这些活动，也把机会交到了我和朋友手里。因为你们，我们才能分别走进上海和北京的现场，亲眼见到一直喜欢的卢卡。谢谢你们，让这一切真正发生。
 
 <div class="deferred-video" data-deferred-video>
-  <video controls playsinline preload="none" poster="{% asset_path M09-1.jpg %}" aria-label="卢卡看见海报并指向本人所在位置的视频">
+  <video controls playsinline preload="none" poster="{% asset_path M09-1-web.webp %}" aria-label="卢卡看见海报并指向本人所在位置的视频">
     <source data-src="{% asset_path V03.mp4 %}" type="video/mp4">
     当前浏览器不支持视频播放。
   </video>
@@ -438,10 +438,10 @@ QQ 空间里的相册也是如此。四千多张照片和视频看起来像一�
 <div id="m09-carousel" class="media-carousel" data-media-carousel role="region" aria-roledescription="carousel" aria-label="第一次互动视频截图，共两张" tabindex="0">
   <div class="media-carousel-frame">
     <figure id="m09-slide-1" class="media-carousel-slide" data-media-slide role="group" aria-roledescription="slide" aria-label="第 1 张，共 2 张" aria-hidden="false">
-      <img src="{% asset_path M09-1.jpg %}" width="420" alt="第一次互动视频关键帧" loading="lazy">
+      <img src="{% asset_path M09-1-web.webp %}" width="420" alt="第一次互动视频关键帧" loading="eager" decoding="async">
     </figure>
     <figure id="m09-slide-2" class="media-carousel-slide" data-media-slide role="group" aria-roledescription="slide" aria-label="第 2 张，共 2 张" aria-hidden="true" hidden>
-      <img src="{% asset_path M09-2.jpg %}" width="760" alt="第一次互动逐帧序列" loading="lazy">
+      <img data-src="{% asset_path M09-2-web.webp %}" width="760" alt="第一次互动逐帧序列" loading="lazy" decoding="async">
     </figure>
   </div>
 
@@ -497,13 +497,13 @@ QQ 空间里的相册也是如此。四千多张照片和视频看起来像一�
 <div id="m10-carousel" class="media-carousel" data-media-carousel role="region" aria-roledescription="carousel" aria-label="第二次互动照片，共三张" tabindex="0">
   <div class="media-carousel-frame">
     <figure id="m10-slide-1" class="media-carousel-slide" data-media-slide role="group" aria-roledescription="slide" aria-label="第 1 张，共 3 张" aria-hidden="false">
-      <img src="{% asset_path M10-3.png %}" width="420" alt="第二次互动视频截图" loading="lazy">
+      <img src="{% asset_path M10-3-web.webp %}" width="420" alt="第二次互动视频截图" loading="eager" decoding="async">
     </figure>
     <figure id="m10-slide-2" class="media-carousel-slide" data-media-slide role="group" aria-roledescription="slide" aria-label="第 2 张，共 3 张" aria-hidden="true" hidden>
-      <img src="{% asset_path M10-1.jpeg %}" width="520" alt="卢卡竖起大拇指的现场照片" loading="lazy">
+      <img data-src="{% asset_path M10-1-web.webp %}" width="520" alt="卢卡竖起大拇指的现场照片" loading="lazy" decoding="async">
     </figure>
     <figure id="m10-slide-3" class="media-carousel-slide" data-media-slide role="group" aria-roledescription="slide" aria-label="第 3 张，共 3 张" aria-hidden="true" hidden>
-      <img src="{% asset_path M10-2.jpg %}" width="520" alt="卢卡现场微笑近景" loading="lazy">
+      <img data-src="{% asset_path M10-2-web.webp %}" width="520" alt="卢卡现场微笑近景" loading="lazy" decoding="async">
     </figure>
   </div>
 
@@ -870,6 +870,13 @@ QQ 空间里的相册也是如此。四千多张照片和视频看起来像一�
         const show = (nextIndex) => {
           current = (nextIndex + slides.length) % slides.length;
 
+          const activeImage = slides[current].querySelector('img[data-src]');
+          if (activeImage) {
+            activeImage.setAttribute('fetchpriority', 'high');
+            activeImage.src = activeImage.dataset.src;
+            activeImage.removeAttribute('data-src');
+          }
+
           slides.forEach((slide, index) => {
             const active = index === current;
             slide.hidden = !active;
@@ -963,4 +970,4 @@ QQ 空间里的相册也是如此。四千多张照片和视频看起来像一�
 
 **我看见，你也看见了我。**
 
-<img src="{% asset_path M11.jpg %}" width="760" alt="活动入场券、海报与卢卡主题照片，留住这次见面的记忆" loading="lazy">
+<img src="{% asset_path M11-web.webp %}" width="760" alt="活动入场券、海报与卢卡主题照片，留住这次见面的记忆" loading="lazy" decoding="async">
