@@ -1,1 +1,156 @@
 /* Here is your custom css styles. */
+/* Waline 留言板美化 */
+#waline {
+  --waline-font-size: 15px;
+
+  --waline-theme-color: #16a765;
+  --waline-active-color: #0d8c53;
+
+  --waline-color: #34495e;
+  --waline-light-grey: #8a9690;
+  --waline-dark-grey: #4b5d54;
+
+  --waline-bg-color: #ffffff;
+  --waline-bg-color-light: #f5fbf7;
+  --waline-bg-color-hover: #edf8f1;
+  --waline-border-color: #d8e9df;
+
+  --waline-info-bg-color: #f1f8f4;
+  --waline-info-color: #87958d;
+
+  --waline-avatar-size: 3.1rem;
+  --waline-avatar-radius: 18px;
+
+  --waline-border: 1px solid var(--waline-border-color);
+  --waline-box-shadow: 0 10px 30px rgba(32, 90, 60, 0.08);
+}
+
+/* 留言板外层卡片 */
+#contact > .card {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* 输入框整体 */
+#waline .wl-panel {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--waline-box-shadow);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+#waline .wl-panel:focus-within {
+  box-shadow: 0 14px 38px rgba(22, 167, 101, 0.15);
+}
+
+/* 昵称、邮箱、网址区域 */
+#waline .wl-header {
+  background: linear-gradient(180deg, #fbfefc 0%, #f5fbf7 100%);
+}
+
+/* 留言输入区 */
+#waline .wl-editor {
+  min-height: 150px;
+  padding: 16px;
+  line-height: 1.8;
+}
+
+/* 提交按钮 */
+#waline .wl-btn.primary {
+  min-width: 72px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #31bf78, #11985a);
+  box-shadow: 0 6px 16px rgba(17, 152, 90, 0.22);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#waline .wl-btn.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 9px 20px rgba(17, 152, 90, 0.28);
+}
+
+/* 评论数量标题 */
+#waline .wl-count {
+  font-weight: 700;
+  color: #34495e;
+}
+
+/* 每条留言卡片 */
+#waline .wl-card {
+  margin-top: 14px;
+  padding: 18px 12px;
+  border: 1px solid #e2eee7;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #ffffff, #fbfefc);
+  box-shadow: 0 7px 22px rgba(35, 82, 58, 0.06);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+#waline .wl-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(35, 82, 58, 0.11);
+}
+
+/* 头像 */
+#waline .wl-avatar {
+  border: 2px solid #e4f2e9;
+  box-shadow: 0 5px 14px rgba(31, 112, 72, 0.12);
+}
+
+/* 昵称 */
+#waline .wl-nick {
+  font-weight: 700;
+  color: #24543b;
+}
+
+/* 留言正文 */
+#waline .wl-content {
+  margin-top: 9px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #3f4f47;
+}
+
+/* 浏览器、操作系统等信息 */
+#waline .wl-meta > span {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 5px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: #f1f7f3;
+}
+
+/* 排序选项 */
+#waline .wl-sort li.active {
+  font-weight: 700;
+}
+
+/* 底部 Powered by */
+#waline .wl-power {
+  opacity: 0.5;
+}
+
+/* 手机端 */
+@media screen and (max-width: 600px) {
+  #waline {
+    --waline-font-size: 14px;
+    --waline-avatar-size: 2.7rem;
+  }
+
+  #waline .wl-editor {
+    min-height: 125px;
+    padding: 12px;
+  }
+
+  #waline .wl-card {
+    margin-top: 10px;
+    padding: 14px 8px;
+    border-radius: 13px;
+  }
+
+  #waline .wl-content {
+    font-size: 14px;
+  }
+}
