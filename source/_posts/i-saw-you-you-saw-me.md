@@ -419,7 +419,7 @@ QQ 空间里的相册也是如此。四千多张照片和视频看起来像一�
 我也要感谢“守护胖7健康成长”的两位管理员——剪子姐和双鱼哥。是你们组织了这些活动，也把机会交到了我和朋友手里。因为你们，我们才能分别走进上海和北京的现场，亲眼见到一直喜欢的卢卡。谢谢你们，让这一切真正发生。
 
 <div class="deferred-video" data-deferred-video>
-  <video controls playsinline preload="none" poster="{% asset_path M09-1-web.webp %}" aria-label="卢卡看见海报并指向本人所在位置的视频">
+  <video controls playsinline preload="none" poster="{% asset_path V03-poster.jpg %}" aria-label="卢卡看见海报并指向本人所在位置的视频">
     <source data-src="{% asset_path V03.mp4 %}" type="video/mp4">
     当前浏览器不支持视频播放。
   </video>
