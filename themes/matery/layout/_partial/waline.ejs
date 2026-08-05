@@ -1,0 +1,30 @@
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/@waline/client@v3/dist/waline.css"
+/>
+
+<div class="card-content">
+  <div id="waline"></div>
+</div>
+
+<script type="module">
+  import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+
+  init({
+    el: '#waline',
+    serverURL: '<%= theme.waline.serverURL %>',
+    path: '/contact/',
+    lang: 'zh-CN',
+
+    login: 'disable',
+    meta: ['nick', 'mail', 'link'],
+    requiredMeta: ['nick'],
+
+    commentSorting: 'latest',
+    pageSize: 10,
+    wordLimit: [1, 500],
+
+    imageUploader: false,
+    highlighter: false
+  });
+</script>

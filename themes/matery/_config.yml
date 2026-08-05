@@ -381,6 +381,9 @@ valine:
   pageSize: 10
   placeholder: 'just go go' # Comment Box placeholder
   background: /medias/comment_bg.png
+waline:
+  enable: true
+  serverURL: 'https://luka-waline.vercel.app'
 
 # The configuration of the MiniValine comment module is not activated by default.
 # To use it, activate the configuration item and set appId and appKey.
