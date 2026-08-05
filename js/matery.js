@@ -77,7 +77,7 @@ $(function () {
                 if (!imgPath) {
                 return;
                  }
-            $(this).wrap('<div class="img-item" data-src="' + imgPath + '" data-sub-html=".caption"></div>');
+            $(this).wrap('<div class="img-item" data-src="' + imgPath + '" data-exthumbimage="' + imgPath + '" data-sub-html=".caption"></div>');
             // 图片添加阴影
             $(this).addClass("img-shadow img-margin");
             // 图片添加字幕
@@ -105,6 +105,7 @@ $(function () {
         });
         $('#articleContent, #myGallery').lightGallery({
             selector: '.img-item',
+            exThumbImage: 'data-exthumbimage',
             // 启用字幕
             subHtmlSelectorRelative: true
         });
