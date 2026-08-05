@@ -383,7 +383,7 @@ valine:
   background: /medias/comment_bg.png
 waline:
   enable: true
-  serverURL: 'https://luka-waline.vercel.app'
+  serverURL:'https://waline-292490-10-1464083962.sh.run.tcloudbase.com'
 
 # The configuration of the MiniValine comment module is not activated by default.
 # To use it, activate the configuration item and set appId and appKey.
