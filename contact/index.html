@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="contact, Luka">
+    <meta name="keywords" content="留言板, Luka">
     <meta name="description" content="生来自有凌云志，守得云开见月明">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>contact | Luka</title>
+    <title>留言板 | Luka</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -478,7 +478,9 @@
                 <div class="tag-title center-align">
                     <i class="fas fa-comments"></i>&nbsp;&nbsp;留言板
                 </div>
-                
+                <p>欢迎来到我的留言板。</p>
+<p>可以在这里留下想说的话、博客建议，或者分享我们共同经历过的记忆。填写昵称即可留言，邮箱和个人网站均为选填信息。</p>
+
             </div>
         </div>
         <div class="card">
@@ -493,6 +495,39 @@
             
 			
 			
+
+            
+            <link
+  rel="stylesheet"
+  href="https://unpkg.com/@waline/client@v3/dist/waline.css"
+/>
+
+<div class="card-content">
+  <div id="waline"></div>
+</div>
+
+<script type="module">
+  import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+
+  init({
+    el: '#waline',
+    serverURL: 'https://luka-waline.vercel.app',
+    path: '/contact/',
+    lang: 'zh-CN',
+
+    login: 'disable',
+    meta: ['nick', 'mail', 'link'],
+    requiredMeta: ['nick'],
+
+    commentSorting: 'latest',
+    pageSize: 10,
+    wordLimit: [1, 500],
+
+    imageUploader: false,
+    highlighter: false
+  });
+</script>
+            
 
             
 
