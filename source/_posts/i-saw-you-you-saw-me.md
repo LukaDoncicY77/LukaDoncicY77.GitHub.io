@@ -309,7 +309,7 @@ QQ 空间里的相册也是如此。四千多张照片和视频看起来像一�
   </div>
 </div>
 
-<div class="deferred-video" data-deferred-video>
+<div class="deferred-video deferred-video--v02" data-deferred-video>
   <video controls playsinline preload="none" poster="{% asset_path V02-poster.jpg %}" aria-label="经特殊通道进入场地区域的视频">
     <source data-src="{% asset_path V02.mp4 %}" type="video/mp4">
     当前浏览器不支持视频播放。
@@ -543,6 +543,11 @@ QQ 空间里的相册也是如此。四千多张照片和视频看起来像一�
 
   .deferred-video--portrait {
     aspect-ratio: 3 / 4;
+  }
+
+  .deferred-video--v02 {
+  max-width: 430px;
+  aspect-ratio: 9 / 16;
   }
 
   .deferred-video video {
