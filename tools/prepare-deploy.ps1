@@ -66,6 +66,14 @@ foreach ($required in @('index.html', 'columns\index.html')) {
 }
 
 $publicFiles = @(Get-ChildItem -LiteralPath $publicRoot -Recurse -File -Force)
+$emptyHtmlFiles = @($publicFiles | Where-Object {
+    $_.Extension -eq '.html' -and $_.Length -eq 0
+})
+
+if ($emptyHtmlFiles.Count -gt 0) {
+    $paths = $emptyHtmlFiles.FullName -join [Environment]::NewLine
+    throw "Generated site contains zero-byte HTML files. Deployment stopped:`n$paths"
+}
 $oversizedPublic = @($publicFiles | Where-Object { $_.Length -ge 100MB })
 if ($oversizedPublic.Count -gt 0) {
     $paths = $oversizedPublic.FullName -join [Environment]::NewLine
