@@ -916,9 +916,199 @@ QQ 空间里的相册也是如此。四千多张照片和视频看起来像一�
       });
     };
 
+    // 智能图片预加载：提前加载即将看到的图片
+    const smartImageTasks = new WeakMap();
+
+    const preloadArticleImage = (img, priority = 'auto') => {
+      if (!img) return Promise.resolve();
+
+      if (smartImageTasks.has(img)) {
+        return smartImageTasks.get(img);
+      }
+
+      const task = new Promise((resolve) => {
+        const source =
+          img.dataset.src ||
+          img.currentSrc ||
+          img.getAttribute('src');
+
+        if (!source) {
+          resolve();
+          return;
+        }
+
+        if (
+          !img.dataset.src &&
+          img.complete &&
+          img.naturalWidth > 0
+        ) {
+          resolve();
+          return;
+        }
+
+        const loader = new Image();
+        loader.decoding = 'async';
+
+        if ('fetchPriority' in loader) {
+          loader.fetchPriority = priority;
+        }
+
+        const finish = (success) => {
+          if (success && img.dataset.src) {
+            img.src = img.dataset.src;
+            img.removeAttribute('data-src');
+          }
+
+          if (success) {
+            img.dataset.smartLoaded = 'true';
+          } else {
+            smartImageTasks.delete(img);
+          }
+
+          resolve();
+        };
+
+        loader.onload = () => {
+          if (typeof loader.decode === 'function') {
+            loader
+              .decode()
+              .catch(() => {})
+              .finally(() => finish(true));
+          } else {
+            finish(true);
+          }
+        };
+
+        loader.onerror = () => finish(false);
+        loader.src = source;
+      });
+
+      smartImageTasks.set(img, task);
+      return task;
+    };
+
+    const preloadCarouselImages = (carousel) =>
+      Promise.all(
+        Array.from(carousel.querySelectorAll('img')).map(
+          (img, index) =>
+            preloadArticleImage(
+              img,
+              index === 0 ? 'high' : 'auto'
+            )
+        )
+      );
+
+    const initSmartImageLoading = () => {
+      const article = document.querySelector('#articleContent');
+
+      if (
+        !article ||
+        article.dataset.smartImagesReady === 'true'
+      ) {
+        return;
+      }
+
+      article.dataset.smartImagesReady = 'true';
+
+      const carousels = Array.from(
+        article.querySelectorAll('[data-media-carousel]')
+      );
+
+      const carouselImages = new Set(
+        carousels.flatMap((carousel) =>
+          Array.from(carousel.querySelectorAll('img'))
+        )
+      );
+
+      const normalImages = Array.from(
+        article.querySelectorAll('img')
+      ).filter((img) => !carouselImages.has(img));
+
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+
+              if (
+                entry.target.matches(
+                  '[data-media-carousel]'
+                )
+              ) {
+                preloadCarouselImages(entry.target);
+              } else {
+                preloadArticleImage(
+                  entry.target,
+                  'high'
+                );
+              }
+
+              observer.unobserve(entry.target);
+            });
+          },
+          {
+            rootMargin: '1800px 0px',
+            threshold: 0.01
+          }
+        );
+
+        normalImages.forEach((img) =>
+          observer.observe(img)
+        );
+
+        carousels.forEach((carousel) =>
+          observer.observe(carousel)
+        );
+      } else {
+        normalImages.forEach((img) =>
+          preloadArticleImage(img)
+        );
+
+        carousels.forEach((carousel) =>
+          preloadCarouselImages(carousel)
+        );
+      }
+
+      const remainingImages = Array.from(
+        article.querySelectorAll('img')
+      );
+
+      const preloadRemaining = async () => {
+        for (const img of remainingImages) {
+          await preloadArticleImage(img, 'low');
+
+          await new Promise((resolve) => {
+            if ('requestIdleCallback' in window) {
+              window.requestIdleCallback(
+                () => resolve(),
+                { timeout: 1000 }
+              );
+            } else {
+              window.setTimeout(resolve, 120);
+            }
+          });
+        }
+      };
+
+      const startBackgroundPreload = () => {
+        window.setTimeout(preloadRemaining, 800);
+      };
+
+      if (document.readyState === 'complete') {
+        startBackgroundPreload();
+      } else {
+        window.addEventListener(
+          'load',
+          startBackgroundPreload,
+          { once: true }
+        );
+      }
+    };
+
     const initArticleMedia = () => {
       initDeferredVideos();
       initMediaCarousels();
+      initSmartImageLoading();
     };
 
     if (document.readyState === 'loading') {
