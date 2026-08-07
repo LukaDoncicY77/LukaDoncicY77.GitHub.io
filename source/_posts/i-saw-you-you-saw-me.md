@@ -26,7 +26,7 @@ reprintPolicy: noreprint
 
 卢卡的目光越过球场，落在海报上，也落在了我身上。
 
-他看着我，笑了，然后抬起手，指向我和海报所在的位置。
+他看着我，笑着抬起手，指向我和海报所在的位置。
 
 指完之后，卢卡转过身，同旁边的翻译说了些什么。他一边说，一边再次示意我所在的方向。翻译顺着他的目光看过来，也抬起手，指向了我。
 
@@ -46,7 +46,7 @@ reprintPolicy: noreprint
 
 六年以后，轮到他在人群中注意到我。
 
-<img src="{% asset_path M01-web.webp %}" width="480" alt="卢卡站到场地中央时，我在他身后举起亲手制作的海报" loading="eager" decoding="async" fetchpriority="high">
+<img src="{% asset_path M01-web.webp %}" width="480" alt="卢卡站在场地中央时，我在他身后举起亲手制作的海报" loading="eager" decoding="async" fetchpriority="high">
 
 *卢卡站在场地中央时，我在最后一排举起了为他制作的海报。*
 
