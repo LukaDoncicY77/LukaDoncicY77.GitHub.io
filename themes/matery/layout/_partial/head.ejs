@@ -85,5 +85,37 @@
     <link rel="stylesheet" type="text/css" href="<%- theme.jsDelivr.url %><%- url_for(theme.libs.css.mycss) %>">
 
     <script src="<%- theme.jsDelivr.url %><%- url_for(theme.libs.js.jquery) %>"></script>
+<%
+    const siteUrl = (config.url || '').replace(/\/$/, '');
+    const pagePath = page.path || '';
+    const pageUrl = siteUrl + url_for(pagePath);
+
+    const shareTitle = page.share_title || page.title || config.title || '';
+    const rawDesc = page.share_desc || page.description || page.excerpt || config.description || '';
+    const shareDesc = strip_html(rawDesc).replace(/\s+/g, ' ').trim();
+
+    const rawImage = page.share_image || page.img || '';
+    const shareImage = rawImage
+        ? (/^https?:\/\//.test(rawImage)
+            ? rawImage
+            : siteUrl + (rawImage.startsWith('/') ? rawImage : '/' + rawImage))
+        : '';
+%>
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="<%= shareTitle %>">
+<meta property="og:url" content="<%= pageUrl %>">
+<meta property="og:site_name" content="<%= config.title %>">
+<meta property="og:description" content="<%= shareDesc %>">
+
+<% if (shareImage) { %>
+<meta property="og:image" content="<%= shareImage %>">
+<meta itemprop="image" content="<%= shareImage %>">
+<meta name="twitter:image" content="<%= shareImage %>">
+<% } %>
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="<%= shareTitle %>">
+<meta name="twitter:description" content="<%= shareDesc %>">
 
 </head>
