@@ -8,6 +8,8 @@ tags:
   - NBA
   - 球迷故事
 summary: 从2018年选秀大会初识卢卡，到2024年在上海举起亲手制作的海报——那一天，我看见了他，他也看见了我。
+share_desc: 从2018年选秀大会初识卢卡，到2024年在上海举起亲手制作的海报
+
 img: /2024/08/29/i-saw-you-you-saw-me/M11-web.webp
 share_image: /2024/08/29/i-saw-you-you-saw-me/share-preview.jpg
 toc: true
